@@ -1,0 +1,167 @@
+/*
+
+### Primary
+
+- Cyan: hsl(179, 62%, 43%)
+- Bright Yellow: hsl(71, 73%, 54%)
+
+### Neutral
+
+- Light Gray: hsl(204, 43%, 93%)
+- Grayish Blue: hsl(218, 22%, 67%)
+
+font-family: 'Karla', sans-serif; 400,700
+*/
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  box-sizing: border-box;
+  background-color: hsl(204, 43%, 93%);
+  padding: 15% 5%;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  max-width: 100%;
+  min-height: 100vh;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(min-content, max-content));
+  background-color: white;
+  border-radius: 0.3rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(min-content, max-content));
+  row-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  padding: 2rem 6%;
+}
+.header__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: hsl(179, 62%, 43%);
+}
+.header__sub {
+  font-weight: 700;
+  color: hsl(71, 73%, 54%);
+}
+.header__description {
+  line-height: 1.6;
+  color: hsl(218, 22%, 67%);
+}
+
+.main {
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.main__price-container {
+  background-color: hsl(179, 62%, 43%);
+  padding: 7% 6%;
+}
+.main__price-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: "Karla", sans-serif;
+  margin-bottom: 1.3rem;
+}
+.main__price-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.main__price--dollar {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+.main__price--per {
+  font-weight: 400;
+  color: hsl(204, 43%, 93%);
+  margin-left: 1rem;
+  opacity: 0.7;
+}
+
+.main__price--description {
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.btn-signup {
+  background-color: hsl(71, 73%, 54%);
+  color: #fff;
+  padding: 0.8rem;
+  border-radius: 0.3rem;
+  display: block;
+  text-align: center;
+  box-shadow: 0.5rem 0.5rem 1rem rgb(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-signup:hover {
+  opacity: 0.8;
+  transform: translateY(-0.1rem);
+}
+
+.main__why {
+  padding: 7% 6%;
+  background-color: hsl(180, 36%, 55%);
+}
+.main__why-title {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.main__why-list {
+  opacity: 0.7;
+  font-weight: 400;
+  color: hsl(204, 43%, 93%);
+}
+
+@media screen and (min-width: 50em) {
+  body {
+    padding: 0;
+    place-content: center;
+  }
+  .header {
+    padding-right: 10%;
+  }
+  .container {
+    max-width: 60%;
+    justify-self: center;
+  }
+  .main {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main__price-container {
+    grid-column: 1 / 2;
+    padding: 11%;
+  }
+  .main__why {
+    grid-column: 2 / -1;
+    padding: 11%;
+  }
+}
